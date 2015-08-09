@@ -26,6 +26,9 @@ public class MainActivity extends FragmentActivity {
      */
     private PagerAdapter pagerAdapter;
 
+    private BlendingPageTransformer pageTransformer;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +38,22 @@ public class MainActivity extends FragmentActivity {
         pager = (ViewPager) findViewById(R.id.pager);
         pagerAdapter = new ScreenSlidePagerAdapter(getFragmentManager());
         pager.setAdapter(pagerAdapter);
-        pager.setPageTransformer(true, new ZoomOutPageTransformer());
+        pageTransformer = new BlendingPageTransformer(this);
+        pager.setPageTransformer(true, pageTransformer);
         pager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
-            public void onPageSelected(int position) {
-                // When changing pages, do something
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
+            {
+                if(position == pager.getCurrentItem() && positionOffset > 0)
+                {
+                    //swipe right
+                    pageTransformer.swipeLeft = false;
+                }
+                else if (positionOffset > 0)
+                {
+                    //swipe left
+                    pageTransformer.swipeLeft = true;
+                }
             }
         });
     }

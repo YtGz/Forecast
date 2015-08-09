@@ -1,6 +1,7 @@
 package com.example.philipp.forecast;
 
 import android.app.Fragment;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,11 +22,38 @@ public class MainActivityFragment extends Fragment {
      */
     private int pageNumber;
 
+    private int backgroundColor;
+
     /**
      * Factory method for this fragment class. Constructs a new fragment for the given page number.
      */
     public static MainActivityFragment create(int pageNumber) {
         MainActivityFragment fragment = new MainActivityFragment();
+        int c;
+        switch(pageNumber) {
+            case 0:
+                c = Color.CYAN;
+                break;
+            case 1:
+                c = Color.BLUE;
+                break;
+            case 2:
+                c = Color.YELLOW;
+                break;
+            case 3:
+                c = Color.RED;
+                break;
+            case 4:
+                c = Color.GRAY;
+                break;
+            case 5:
+                c = Color.GREEN;
+                break;
+            default:
+                c = Color.MAGENTA;
+                break;
+        }
+        fragment.setBackgroundColor(c);
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, pageNumber);
         fragment.setArguments(args);
@@ -48,6 +76,9 @@ public class MainActivityFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater
                 .inflate(R.layout.fragment_main, container, false);
 
+        // Set the background colour
+        rootView.setBackgroundColor(Color.BLUE);
+
         // Set the text view to show the page number.
         ((TextView) rootView.findViewById(R.id.page)).setText(
                 getString(R.string.page, pageNumber + 1));
@@ -60,5 +91,13 @@ public class MainActivityFragment extends Fragment {
      */
     public int getPageNumber() {
         return pageNumber;
+    }
+
+    public int getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    public void setBackgroundColor(int backgroundColor) {
+        this.backgroundColor = backgroundColor;
     }
 }
