@@ -1,0 +1,7 @@
+From left to right: fade out text and fade in new one. Also blend between the background colors.
+
+From top to bottom: depth anim. Standard color: blue, gray or previously active? Custom icons for search and current location needed.
+
+After choosing a location: Tween from e.g. "Vienna" to the full "Today in Vienna" screen. Also blend between the background colors. Maybe display a loading icon if fetching data takes more than 1s.
+
+Loading screen for: "fetching your position" -> maybe an animated compass of some sorts?
