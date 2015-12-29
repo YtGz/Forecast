@@ -1,0 +1,22 @@
+<resources>
+    <string name="icon_cloudy">a</string>
+    <string name="icon_heavy_clouds">b</string>
+    <string name="icon_heavy_rain">c</string>
+    <string name="icon_heavy_snow">d</string>
+    <string name="icon_light_rain">e</string>
+    <string name="icon_light_snow">f</string>
+    <string name="icon_partly_cloudy">g</string>
+    <string name="icon_quarter_moon">h</string>
+    <string name="icon_rain">i</string>
+    <string name="icon_rainy_storm">j</string>
+    <string name="icon_rainy_storm_cloudy">k</string>
+    <string name="icon_rainy_storm_sunny">l</string>
+    <string name="icon_sleet">m</string>
+    <string name="icon_snow">n</string>
+    <string name="icon_sunny">o</string>
+    <string name="icon_sunshower">p</string>
+    <string name="icon_thunderstorm">q</string>
+    <string name="icon_thunderstorm_rainy">r</string>
+    <string name="icon_warning_sign">s</string>
+    <string name="icon_windy">t</string>
+</resources>

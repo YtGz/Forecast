@@ -8,6 +8,8 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 
+import com.shamanland.fonticon.FontIconTypefaceHolder;
+
 public class MainActivity extends FragmentActivity {
 
     /**
@@ -32,6 +34,9 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //load the icon font
+        FontIconTypefaceHolder.init(getAssets(), "icons.ttf");
+
         setContentView(R.layout.activity_main);
 
         // Instantiate a ViewPager and a PagerAdapter.

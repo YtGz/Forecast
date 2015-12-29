@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "celsius";
+  src:url("fonts/celsius.eot");
+  src:url("fonts/celsius.eot?#iefix") format("embedded-opentype"),
+    url("fonts/celsius.woff") format("woff"),
+    url("fonts/celsius.ttf") format("truetype"),
+    url("fonts/celsius.svg#celsius") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "celsius" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "celsius" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cloudy:before {
+  content: "a";
+}
+.icon-heavy-clouds:before {
+  content: "b";
+}
+.icon-heavy-rain:before {
+  content: "c";
+}
+.icon-heavy-snow:before {
+  content: "d";
+}
+.icon-light-rain:before {
+  content: "e";
+}
+.icon-light-snow:before {
+  content: "f";
+}
+.icon-partly-cloudy:before {
+  content: "g";
+}
+.icon-quarter-moon:before {
+  content: "h";
+}
+.icon-rain:before {
+  content: "i";
+}
+.icon-rainy-storm:before {
+  content: "j";
+}
+.icon-rainy-storm-cloudy:before {
+  content: "k";
+}
+.icon-rainy-storm-sunny:before {
+  content: "l";
+}
+.icon-sleet:before {
+  content: "m";
+}
+.icon-snow:before {
+  content: "n";
+}
+.icon-sunny:before {
+  content: "o";
+}
+.icon-sunshower:before {
+  content: "p";
+}
+.icon-thunderstorm:before {
+  content: "q";
+}
+.icon-thunderstorm-rainy:before {
+  content: "r";
+}
+.icon-warning-sign:before {
+  content: "s";
+}
+.icon-windy:before {
+  content: "t";
+}

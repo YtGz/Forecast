@@ -80,8 +80,8 @@ public class MainActivityFragment extends Fragment {
         rootView.setBackgroundColor(Color.BLUE);
 
         // Set the text view to show the page number.
-        ((TextView) rootView.findViewById(R.id.page)).setText(
-                getString(R.string.page, pageNumber + 1));
+        /*((TextView) rootView.findViewById(R.id.page)).setText(
+                getString(R.string.page, pageNumber + 1));*/
 
         return rootView;
     }

@@ -46,7 +46,7 @@ public class BlendingPageTransformer implements ViewPager.PageTransformer {
             if(position < 0) {
                 ViewPager pager = (ViewPager) activity.findViewById(R.id.pager);
                 int[] fragmentIndices = getFragmentIndices(pager);
-                MainActivityFragment prevFragment = (MainActivityFragment) pager.getAdapter().instantiateItem(pager, fragmentIndices[0]);  //note that pager.getCurrentItem() stays the same fragment until the next page has reched position 0!
+                MainActivityFragment prevFragment = (MainActivityFragment) pager.getAdapter().instantiateItem(pager, fragmentIndices[0]);  //note that pager.getCurrentItem() stays the same fragment until the next page has reached position 0!
                 MainActivityFragment nextFragment = (MainActivityFragment) pager.getAdapter().instantiateItem(pager, fragmentIndices[1]);
                 int blendedColor = getBlendedColor(position, prevFragment, nextFragment);
                 page.setBackgroundColor(blendedColor);
@@ -54,7 +54,7 @@ public class BlendingPageTransformer implements ViewPager.PageTransformer {
             else if(position > 0) {
                 ViewPager pager = (ViewPager) activity.findViewById(R.id.pager);
                 int[] fragmentIndices = getFragmentIndices(pager);
-                MainActivityFragment prevFragment = (MainActivityFragment) pager.getAdapter().instantiateItem(pager, fragmentIndices[0]);  //note that pager.getCurrentItem() stays the same fragment until the next page has reched position 0!
+                MainActivityFragment prevFragment = (MainActivityFragment) pager.getAdapter().instantiateItem(pager, fragmentIndices[0]);  //note that pager.getCurrentItem() stays the same fragment until the next page has reached position 0!
                 MainActivityFragment nextFragment = (MainActivityFragment) pager.getAdapter().instantiateItem(pager, fragmentIndices[1]);
                 int blendedColor = getBlendedColor(position-1, prevFragment, nextFragment);
                 page.setBackgroundColor(blendedColor);
