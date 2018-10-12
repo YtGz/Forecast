@@ -16,22 +16,13 @@
         android:id="@+id/page" />-->
 
     <com.shamanland.fonticon.FontIconView
-        android:layout_width="89dp"
-        android:layout_height="91dp"
-        android:layout_centerInParent="true"
-        android:text="@string/icon_thunderstorm"
-        android:textColor="@color/white"
-        android:textSize="@dimen/med_big_icon_size" />
-
-    <TextView
-        android:id="@+id/temperature"
-        android:layout_width="215dp"
-        android:layout_height="197dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="62dp"
-        android:text="22°"
-        android:textAppearance="@android:style/TextAppearance.Material"
-        android:textSize="@dimen/temperature_size" />
+        android:text="@string/icon_thunderstorm"
+        android:textSize="@dimen/big_icon_size"
+        android:textColor="@color/white"
+        />
 
 </RelativeLayout>

@@ -1,16 +1,24 @@
 package com.example.philipp.forecast;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.support.v4.app.FragmentActivity;
+import android.content.Context;
+import android.os.Bundle;
 import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
 
 import com.shamanland.fonticon.FontIconTypefaceHolder;
 
-public class MainActivity extends FragmentActivity {
+import io.github.inflationx.calligraphy3.CalligraphyConfig;
+import io.github.inflationx.calligraphy3.CalligraphyInterceptor;
+import io.github.inflationx.viewpump.ViewPump;
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
+
+;
+
+public class MainActivity extends Activity {
 
     /**
      * The number of pages to show.
@@ -30,17 +38,29 @@ public class MainActivity extends FragmentActivity {
 
     private BlendingPageTransformer pageTransformer;
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //load the icon font
         FontIconTypefaceHolder.init(getAssets(), "icons.ttf");
+        //set the default font
+        ViewPump.init(ViewPump.builder()
+                .addInterceptor(new CalligraphyInterceptor(
+                        new CalligraphyConfig.Builder()
+                                .setDefaultFontPath("fonts/HelveticaNeue-UltraLight.otf")
+                                .setFontAttrId(R.attr.fontPath)
+                                .build()))
+                .build());
 
         setContentView(R.layout.activity_main);
 
         // Instantiate a ViewPager and a PagerAdapter.
-        pager = (ViewPager) findViewById(R.id.pager);
+        pager = findViewById(R.id.pager);
         pagerAdapter = new ScreenSlidePagerAdapter(getFragmentManager());
         pager.setAdapter(pagerAdapter);
         pageTransformer = new BlendingPageTransformer(this);
